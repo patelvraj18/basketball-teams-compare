@@ -1,0 +1,30 @@
+Abbreviation,Explanation,lineChart,radarChart,type
+TEAM_CITY,Team City,false,false,N/A
+TEAM_NAME,Team Name,false,false,N/A
+YEAR,Year,false,false,N/A
+GP,Games Played,false,false,N/A
+WINS,Wins,false,false,N/A
+LOSSES,Losses,false.false,N/A
+WIN_PCT,Win Percentage,true,true,WIN_PCT
+PO_WINS,Playoff Wins,false,false,N/A
+PO_LOSSES,Playoff Losses,false,false,N/A
+NBA_FINALS_APPEARANCE,NBA Finals Appearance,false,false,N/A
+FGM,Field Goals Made,false,false,N/A
+FGA,Field Goals Attempted,true,false,N/A
+FG_PCT,Field Goal Percentage,true,true,offense
+FG3M,Three-Point Goals Made,false,false,N/A
+FG3A,Three-Point Goals Attempted,true,false,N/A
+FG3_PCT,Three-Point Goal Percentage,true,false,N/A
+FTM,Free Throws Made,false,false,N/A
+FTA,Free Throws Attempted,false,false,N/A
+FT_PCT,Free Throw Percentage,true,false,N/A
+OREB,Offensive Rebounds,false,true,offense
+DREB,Defensive Rebounds,false,true,defense
+REB,Total Rebounds,true,false,N/A
+AST,Assists,true,false,N/A
+PF,Personal Fouls,true,false,N/A
+STL,Steals,true,true,defense
+TOV,Turnovers,false,false,N/A
+BLK,Blocks,true,true,defense
+PTS,Points,true,false,N/A
+PTS_RANK,Points Rank,true,false,N/A

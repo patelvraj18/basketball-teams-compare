@@ -1,0 +1,658 @@
+@font-face {
+  font-family: 'Basketball';
+  src: url('../fonts/Basketball.otf') format('opentype');
+}
+
+body {
+  background-color: #f2ebe1;
+}
+
+.nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.instruction .left {
+  text-align: left;
+}
+
+.instruction {
+  margin-top: 60px;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #906440;
+  font-weight: 500;
+}
+
+.more_top {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.more_top_2 {
+  margin-top: 50px;
+}
+
+.title {
+  color: #FB8531;
+  font-size: 3rem;
+  font-family: 'Basketball', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.title2 {
+  color: #754d42;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.title3 {
+  color: #FB8531;
+  font-size: 3rem;
+  font-family: 'Basketball', sans-serif;
+  text-align: center;
+  margin-top: 0;
+}
+
+.subheading {
+  color: #345d5a;
+  font-size: 2rem;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-weight: 600;
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.subheading2 {
+  color: #345d5a;
+  font-size: 1.25rem;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-weight: 600;
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.bodyText {
+  color: #5d999a;
+  font-size: 1rem;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+  margin-left: 30px;
+  margin-right: 100px;
+}
+
+.bullets {
+  color: #5d999a;
+  font-size: 1rem;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+.bullets_bold {
+  font-weight: 600;
+}
+
+.image {
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.image2 {
+  width: 500px;
+  height: 600px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.image3 {
+  width: 1000px;
+  height: 700px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.info {
+  color: #80756d;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 200;
+  text-align: right;
+  margin-right: -1px;
+}
+
+.info2 {
+  color: #80756d;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 200;
+  text-align: right;
+  margin-right: 35px;
+}
+
+.info3 {
+  color: #80756d;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 200;
+  text-align: right;
+  margin-right: 39px;
+}
+
+.link {
+  color: #5d999a;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  margin: auto;
+  font-style: italic;
+}
+
+.container {
+  padding-top: 0;
+  width: 100%
+}
+
+#lineChartContainer {
+  display: inline-flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0;
+}
+
+.radarChartContainer {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  max-width: 1200px;
+  margin: auto;
+  /* margin-left: 550px; */
+}
+
+
+
+#filterSectionLine {
+  display: block;
+  width: 30%;
+  justify-content: left;
+  align-items: left;
+  /* margin-left: 500px; */
+}
+
+.content {
+  margin-top: 0;
+  margin: auto;
+  /* display: inline-block; */
+
+}
+
+#filterSectionRadar {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  max-width: 1200px;
+}
+
+#featureSelection {
+  width: 40%;
+  float: left;
+  padding-right: 10rem;
+  margin-left: 10px;
+}
+
+#lineChart {
+  width: 50%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.chartsContainer {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 100px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chart-selector-explanantion {
+  color: #153b20;
+  font-family: 'Josefin-Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 00;
+  margin: auto;
+}
+
+.view {
+  width: 50%;
+}
+
+.horizontal {
+  display: flex;
+  padding: 10px;
+  align-content: space-between;
+}
+
+table {
+  padding-left: 5rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  color: #345d5a;
+  font-size: 16px;
+}
+
+.selected {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #A0D2D3;
+}
+
+tr {
+  border-top: 1px solid #9d6556;
+  border-bottom: 1px solid #9d6556;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hover_filter {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #BF9270;
+}
+
+.radio-label {
+  font-family: 'Roboto', sans-serif;
+  color: #508580;
+  font-size: 20px;
+}
+
+/* FB8531 */
+/* f4a064 */
+.description-charts {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #64a39d;
+}
+
+.radio-button {
+  transform: scale(1.5);
+  margin-right: 15px;
+}
+
+.team-dropdown,
+.year-dropdown {
+  font-family: 'Poppins', sans-serif;
+  color: #f4a064;
+  font-weight: 300;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 20px;
+  background-color: #f1f1f1;
+
+}
+
+.team-selectors {
+  align-items: center;
+  justify-content: center;
+}
+
+.team-selector label,
+.year-selector label {
+  font-family: 'Poppins', sans-serif;
+  color: #FB8531;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 0.5rem;
+}
+
+.chart-form {
+  margin-bottom: 2px;
+}
+
+.feature-selector {
+  margin-top: 10px;
+}
+
+.legend-item {
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.legend-color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.legend-label {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.legend {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #5c5c5c;
+}
+
+.chart-selector {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.chart-form {
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: flex-start;
+
+}
+
+#radarChart {
+  color: #9d6556;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 150px;
+}
+
+.text-extra {
+  font-family: 'Poppins', sans-serif;
+  color: #345d5a;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  /* Decrease the top margin to 5% */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 65%;
+}
+
+
+/* The Close Button */
+.close {
+  color: #5c5c5c;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup_intro {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup_title {
+  color: rgb(120, 86, 62);
+  font-size: 3rem;
+  font-family: 'Basketball', sans-serif;
+  margin-left: 10px;
+}
+
+.cute_icon {
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+.popup_intro_text {
+  color: #cf6d27;
+  font-size: 1.5rem;
+  font-family: 'Basketball', sans-serif;
+  margin-top: 10px;
+}
+
+.popup_side_text {
+  font-family: 'Poppins', sans-serif;
+  color: #345d5a;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.popup_main_text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-left: 20px;
+  color: #64a39d;
+}
+
+.popup_intro_text2 {
+  color: #cf6d27;
+  font-size: 1.5rem;
+  font-family: 'Basketball', sans-serif;
+  margin-top: 50px;
+}
+
+.popup_number_text {
+  font-family: 'Poppins', sans-serif;
+  color: #345d5a;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.popup_number_subtext {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  margin-left: 20px;
+  color: #64a39d;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.drop_down {
+  width: 50%;
+}
+
+.drop_text_title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ad5c21;
+  font-size: 1.5rem;
+  font-family: 'Basketball', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  margin-left: -55px;
+}
+
+
+.drop_text_main {
+  font-family: 'Poppins', sans-serif;
+  color: #345d5a;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.drop_text_side {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #64a39d;
+}
+
+.drop_text_side2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #64a39d;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #fffbf5;
+  padding: 15px;
+  margin-left: 3px;
+  /* Adjust to align with the title */
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.chevron-icon {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 3px;
+  opacity: 0.5;
+}
+
+.links_top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.image {
+  margin-bottom: 50px;
+}
+
+.image3 {
+  width: 1000px;
+  height: 600px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.image4 {
+  width: 1400px;
+  height: 500px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.image5 {
+  height: 600px;
+  object-fit: contain;
+  margin-left: 30px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.image1_0 {
+  height: 600px;
+  object-fit: contain;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.image2_0 {
+  height: 600px;
+  object-fit: contain;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.image3_0 {
+  height: 600px;
+  object-fit: contain;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

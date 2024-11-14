@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Comparison Visualization</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="text/javascript" src="bower_components/d3-tip/index.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+</head>
+
+<body>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="popup_intro">
+                <p class="popup_title">Hello! Welcome to my website! - </p>
+                <img src="images/cute_icon.png" alt="cute icon" class="cute_icon">
+            </div>
+            <p class="popup_side_text"><span class="popup_intro_text">Welcome to the basketball comparison visualizer!
+                </span> - the best place to compare two NBA teams side by side!</p>
+
+            <p class="popup_main_text">-> Finally settle the debate of who is the better team once and for all! With our
+                easy to use website, you can compare two NBA teams by their performance
+                over
+                several seasons, no matter what your experience level is. </p>
+            </p>
+            <p class="popup_intro_text2">How do I use the features?</p>
+            <p class="popup_number_text">1. Select your Chart - Line or Radar</p>
+            <p class="popup_number_subtext">Choose <span class="italics">Line Chart</span> to see a statistic's
+                performance for two teams over the
+                NBA history or <span class="italics">Radar Chart</span> to see 6 notable statistics for two teams at a
+                glance during that NBA
+                season</p>
+            <p class="popup_number_text">2. Select your Teams</p>
+            <p class="popup_number_subtext">This one is simple - select <span class="italics">2</span> from the total 30
+                NBA teams to analyze! </p>
+            <p class="popup_number_text">3. Select your Additional Component - Statistic or Year</p>
+            <p class="popup_number_subtext">For <span class="italics">Line Chart</span>, select the statistic that you
+                would like to observe and for <span class="italics">Radar Chart</span> select the year you would like to
+                analyze two teams' seasons</p>
+
+            <p class="popup_intro_text2">Thank you! Enjoy your stay. ✌🏽</p>
+        </div>
+    </div>
+
+    <div class="nav">
+        <h1 class="title"> 🏀 Basketball Comparison Visualizer 🏀</h1>
+        <!-- <p class="info">Name: Nate Ackerman; E-Mail: a.nate@wustl.edu; UID: 486362</p>
+        <p class="info2">Name: Vraj Patel; E-Mail: p.vraj@wustl.edu; UID: 501699</p>
+        <p class="info3">Name: Mia Park; E-Mail: mia.p@wustl.edu; UID: 513724</p> -->
+        <div class="links_top">
+            <a class="link" href="processbook.html">Process Book</a>
+            <a class="link" target="_blank" href="https://youtu.be/L2PFrkXDEnI">Project Video</a>
+        </div>
+    </div>
+
+    <div class="chart-selector">
+        <form class="chart-form">
+            <h3 class="instruction left descriptionTop">Which chart type do you want to explore?</h3>
+            <label class="radio-label">
+                <input type="radio" name="chartType" value="lineChart" checked="checked" class="radio-button">LINE CHART
+                <div class="chart-selector-explanantion">
+                    <p class="description-charts">Line chart shows how two selected teams performed over many seasons
+                        for
+                        several features including winning percentage, the number of blocks, points, etc.</p>
+                </div>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="chartType" value="radarChart" class="radio-button">RADAR CHART
+                <div class="chart-selector-explanantion">
+                    <p class="description-charts">Radar chart shows how two selected teams record for 6 features
+                        (Winning Percentage, Blocks, Steals, Offensive Rebounds, Defensive Rebounds, Field Goal
+                        Percentage) during a specific
+                        season.</p>
+                </div>
+            </label>
+        </form>
+
+    </div>
+    <div id="container">
+        <div id="lineChartContainer" class="lineChartContainer">
+            <div id="filterSectionLine">
+                <h3 class="instruction more_top">What two teams would you like to compare?</h3>
+                <div class="horizontal team-selectors">
+                    <div class="team-selector">
+                        <label for="team1Selector">Team 1</label><br>
+                        <select id="team1Selector" name="Team1" class="team-dropdown"></select>
+                    </div>
+
+                    <div class="team-selector">
+                        <label for="team2Selector">Team 2</label><br>
+                        <select id="team2Selector" name="Team2" class="team-dropdown"></select>
+                    </div>
+                </div>
+
+                <h3 class="instruction more_top_2">Click the feature you want to compare against</h3>
+                <div id="featureSelector" name="Feature" class="feature-selector">
+                    <!-- Feature selector content -->
+                </div>
+            </div>
+            <div class="lineChartContent">
+                <div id="legend" class="chart-legend">
+                </div>
+                <div id="lineChart" class="view">
+                    <!-- Line chart content -->
+                </div>
+            </div>
+        </div>
+
+        <div id="radarChartContainer" class="radarChartContainer" style="display: none;">
+
+            <div id="filterSectionRadar">
+                <div class="drop_down">
+                    <div id="dropdownTrigger" class="drop_text_title">
+                        Q: Why were these 6 statistics selected?
+                        <img src="images/down-chevron.png" class="chevron-icon" id="chevronDown"
+                            style="display:inline;">
+                        <img src="images/right-chevron.png" class="chevron-icon" id="chevronUp" style="display:none;">
+                    </div>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <p class="drop_text_main">A: These 6 statistics are the most important statistics that determine
+                            the team's overall performance:</p>
+                        <p class="drop_text_side">• WIN_PCT (Win Percentage) is the most important statistic which is
+                            why it is at the top. After all, what matters most is a team winning!</p>
+                        <p class="drop_text_side">• FG_PCT (Field Goal Percentage) and OREB (Offensive Rebounds) are
+                            statistics that shows offensive stats at a whole for success and efficiency!</p>
+                        <p class="drop_text_side2">• BLK (Blocks), STL (Steals), and DREB (Defensive Rebounds) are
+                            statistics that shows defensive stats at a whole to examine preventing opposition from
+                            scoring!</p>
+                    </div>
+                </div>
+
+                <h3 class="instruction">Choose two teams you want to compare and a year</h3>
+
+                <div class="horizontal team-selectors">
+
+                    <div class="team-selector">
+                        <label for="team1Selector">Team 1</label><br>
+                        <select id="team1Selector" name="Team1" class="team-dropdown"></select>
+                    </div>
+
+                    <div class="team-selector">
+                        <label for="team2Selector">Team 2</label><br>
+                        <select id="team2Selector" name="Team2" class="team-dropdown"></select>
+                    </div>
+
+                    <div class="year-selector">
+                        <label for="yearSelector">Year</label><br>
+                        <select id="yearSelector" name="Year" class="year-dropdown"></select>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script type="application/javascript" src="js/lineChart.js"></script>
+    <script type="application/javascript" src="js/radarChart.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+    <script type="application/javascript" src="js/filterSectionLine.js"></script>
+    <script type="application/javascript" src="js/filterSectionRadar.js"></script>
+
+</body>
+
+</html>
